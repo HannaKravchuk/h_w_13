@@ -1,0 +1,250 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.bg-image {
+    content: "";
+    position: fixed;
+    z-index: -2;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-attachment: fixed;
+    background-image: url("image/fon.jpg");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.container {
+    width: 1100px;
+    margin-inline: auto;
+}
+
+.heading {
+    text-align: center;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 6px;
+    background: linear-gradient(90deg, #f2d8ba, #bec0ef, #f2d8ba);
+    position: relative;
+    display: block;
+}
+
+.heading::before,
+.heading::after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 4px;
+    background: linear-gradient(90deg, #f2d8ba, #bec0ef, #f2d8ba);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.heading::before {
+    left: -50px;
+}
+
+.heading::after {
+    right: -50px;
+}
+
+.heading:hover {
+    animation: shine 2s infinite;
+}
+
+@keyframes shine {
+    0% {
+        text-shadow: 0 0 5px #f2d8ba, 0 0 10px #bec0ef, 0 0 20px #f2d8ba;
+    }
+
+    50% {
+        text-shadow: 0 0 10px #f2d8ba, 0 0 20px #bec0ef, 0 0 30px #f2d8ba;
+    }
+
+    100% {
+        text-shadow: 0 0 5px #f2d8ba, 0 0 10px #bec0ef, 0 0 20px #f2d8ba;
+    }
+}
+
+.figure {
+    display: block;
+}
+
+svg {
+    margin: 30px;
+}
+
+.figure__square {
+    fill: rgb(143, 179, 218);
+    stroke: rgb(241, 202, 202);
+    stroke-width: 5px;
+}
+
+.figure__square:hover {
+    transition: fill 1s ease-in-out;
+    animation: change-color 1.5s infinite;
+}
+
+@keyframes change-color {
+    0% {
+        fill: rgb(208, 184, 184);
+        stroke: rgb(143, 179, 218);
+    }
+
+    50% {
+        fill: rgb(239, 163, 163);
+        stroke: rgb(91, 103, 116);
+    }
+
+    100% {
+        fill: rgb(147, 65, 65);
+        stroke: rgb(61, 65, 70);
+    }
+}
+
+.figure__rectangle {
+    fill: rgb(102, 169, 209);
+    stroke: rgb(129, 97, 97);
+    stroke-width: 5px;
+}
+
+.figure__rectangle:hover {
+    transition: fill 1s ease-in-out;
+    animation: change-color-rectang 1.5s infinite;
+}
+
+@keyframes change-color-rectang {
+    0% {
+        fill: rgb(118, 47, 47);
+        stroke: rgb(105, 162, 195);
+    }
+
+    50% {
+        fill: rgb(76, 35, 35);
+        stroke: rgb(18, 34, 44);
+    }
+
+    100% {
+        fill: rgb(98, 80, 80);
+        stroke: rgb(102, 169, 209);
+    }
+}
+
+.figure__circle {
+    fill: rgb(212, 205, 160);
+    stroke: rgb(140, 125, 125);
+    stroke-width: 5px;
+}
+
+.figure__circle:hover {
+    transition: fill 1s ease-in-out;
+    animation: change-color-circle 1.5s infinite;
+}
+
+@keyframes change-color-circle {
+    0% {
+        fill: rgb(215, 214, 150);
+        stroke: rgb(42, 29, 12);
+    }
+
+    50% {
+        fill: rgb(84, 83, 18);
+        stroke: rgb(18, 34, 44);
+    }
+
+    100% {
+        fill: rgb(98, 80, 80);
+        stroke: rgb(102, 169, 209);
+    }
+}
+
+.figure__ellipse {
+    fill: rgb(213, 180, 213);
+    stroke: rgb(160, 171, 201);
+    stroke-width: 5px;
+}
+
+.figure__ellipse:hover {
+    transition: fill 1s ease-in-out;
+    animation: change-color-ellipse 1.5s infinite;
+}
+
+@keyframes change-color-ellipse {
+    0% {
+        fill: rgb(58, 8, 51);
+        stroke: rgb(105, 162, 195);
+    }
+
+    50% {
+        fill: rgb(76, 35, 35);
+        stroke: rgb(18, 34, 44);
+    }
+
+    100% {
+        fill: rgb(98, 80, 80);
+        stroke: rgb(102, 169, 209);
+    }
+}
+
+.tree {
+    transform-origin: 100px 250px;
+    margin-left: 450px;
+}
+
+.tree:hover {
+    animation: sway 2s ease-in-out;
+}
+
+.tree__polygon {
+    fill: rgb(139, 179, 139);
+}
+
+.tree__rect {
+    fill: rgb(92, 64, 64);
+}
+
+.tree__circle {
+    animation: blink 1.5s infinite;
+}
+
+.tree__circle:nth-child(odd) {
+    fill: gold;
+    animation-delay: 2s;
+}
+
+.tree__circle:nth-child(even) {
+    fill: rgb(219, 134, 188);
+    animation-delay: 2s;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+}
+
+@keyframes sway {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(4deg);
+    }
+}
